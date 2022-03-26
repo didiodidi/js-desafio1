@@ -49,13 +49,34 @@ function agregarAlCarrito(){
                     }
                     break;
                 case arrayProductos[1].nombre:
-                     arrayProductos[1].actualizarStock(cantidad);
-                     if (arrayProductos[1].stock < 0 || isNaN(cantidad)){
-                         alert("")
-                     }
+                    arrayProductos[1].actualizarStock(cantidad);
+                    if (arrayProductos[1].stock < 0 || isNaN(cantidad)){
+                        alert("Stock no disponible")
+                        arrayProductos[1].stock = arrayProductos[1].stock+cantidad;
+                        precio = 0;
+                        cantidad = 0;
+                    }else{
+                        precio = arrayProductos[1].precio;
+                    }
+                    break;
+                case arrayProductos[2].nombre:
+                    arrayProductos[2].actualizarStock(cantidad);
+                    if(arrayproductos[2].stock < 0 || isNaN(cantidad)){
+                        alert("Stock no displonible")
+                        arrayProductos[1].stock = arrayProductos[1].stock+cantidad;
+                        precio = 0;
+                        cantidad = 0;
+                    }else{
+                        precio = arrayProductos[2].precio;
+                    }
+                    break;
+                default:
+                    alert("Algunos de los datos ingresados es incorrecto")
+                    precio = 0;
+                    cantidad = 0;
             }
-
-
-    }
-
+        total += precio*cantidad;
+        otroMas = confirm("Queres agregar otro articulo mas al carrito");
+    }while(otroMas);
+}
 
