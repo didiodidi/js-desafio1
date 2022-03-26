@@ -1,9 +1,8 @@
 class Producto{
     constructor(nombre,precio,stock){
         this.nombre = nombre;
-        this.precio = precio;
+        this.precio = parseInt(precio);
         this.stock = stock;
-        this.status = status;
     }
 
     sinIva(){
@@ -16,12 +15,9 @@ class Producto{
 }
 
 const arrayProductos = [];
-arrayProductos.push(new Producto ("textil 1",1500,2));
-arrayProductos.push(new Producto ("textil 2",1600,2));
-arrayProductos.push(new Producto ("pintura 1",4000,2));
-arrayProductos.push(new Producto ("pintura 2",5000,2));
-arrayProductos.push(new Producto ("escultura 1",6000,2));
-arrayProductos.push(new Producto ("escultura 2",3500,2));
+arrayProductos.push(new Producto ("textil",1500,2));
+arrayProductos.push(new Producto ("pintura",1600,2));
+arrayProductos.push(new Producto ("escultura",4000,2));
 console.log (arrayProductos);
 
 //---Funciones para el proceso de compra---
@@ -32,7 +28,7 @@ function agregarAlCarrito(){
     let otroMas;
     //Suma de productos al carrito
     do{
-        let producto = prompt("¿Que productos desea comprar?: textil 1, textil 2, pintura 1, pintura 2, escultura 1, escultura 2");
+        let producto = prompt("¿Que productos desea comprar?:\n textil 1,\n textil 2,\n pintura 1,\n pintura 2,\n escultura 1,\n escultura 2");
         let cantidad = parseInt(prompt("¿Cuantos productos desea comprar?"));
         let precio;
 
@@ -79,6 +75,26 @@ function agregarAlCarrito(){
         otroMas = confirm("Queres agregar otro articulo mas al carrito");
     }while(otroMas);
 }
+
+//Calcular las cuotas 
+let cuotas;
+function cantidadCuotas(){
+    let confirmacion = confirm("¿Querés pagar en cuotas?");
+    if(confirmacion) {
+        cuotas=  parseInt(prompt("¿En cuántas cuotas querés pagar?"));
+        if (cuotas==0){
+            cuotas=1;
+        }else if (isNaN(cuotas)){
+            cantidadCuotas();
+        }
+    }else {
+        cuotas= 1;
+    }
+    return cuotas;
+}
+
+
+
 
 //Calculo del total del carrito
 
