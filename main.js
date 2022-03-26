@@ -32,7 +32,7 @@ function agregarAlCarrito(){
     let otroMas;
     //Suma de productos al carrito
     do{
-        let producto = prompt("¿Que productos desea comprar?");
+        let producto = prompt("¿Que productos desea comprar?: textil 1, textil 2, pintura 1, pintura 2, escultura 1, escultura 2");
         let cantidad = parseInt(prompt("¿Cuantos productos desea comprar?"));
         let precio;
 
@@ -80,3 +80,19 @@ function agregarAlCarrito(){
     }while(otroMas);
 }
 
+//Calculo del total del carrito
+
+function totalAPagar (total, cuotas, intereses){
+    total = (total+intereses)
+    let valorCuota = total/cuotas;
+    alert ("El valor total a pagar es de $"+total+" en "+cuotas+" cuotas de $ "+ valorCuota)
+}
+
+
+
+function comprar () {
+    agregarAlCarrito();
+    totalAPagar (envio(descuento(total)),cantidadCuotas(),calcularIntereses(cuotas));
+}
+
+comprar();
