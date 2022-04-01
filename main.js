@@ -5,9 +5,6 @@ class Producto{
         this.stock = stock;
     }
 
-/*     sinIva(){
-        this.precio -= this.precio*0.21;
-    } */
         actualizarStock(x) {
             this.stock = this.stock - x;
     } 
@@ -77,7 +74,7 @@ function crearCarrito (){
 
 function mostrarTotal (total){
     
-    alert("El total es: "+total);
+    alert("El total es de: $"+total);
 }
 
 crearCarrito();
