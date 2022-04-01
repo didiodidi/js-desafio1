@@ -1,20 +1,43 @@
-class Producto{
-    constructor(nombre,precio,stock){
-        this.nombre = nombre;
-        this.precio = parseInt(precio);
-        this.stock = stock;
+// class Producto{
+//     constructor(nombre,precio,stock){
+//         this.nombre = nombre;
+//         this.precio = parseInt(precio);
+//         this.stock = stock;
+//     }
+
+//         actualizarStock(x) {
+//             this.stock = this.stock - x;
+//     } 
+// }
+
+// const arrayProductos = [];
+// arrayProductos.push(new Producto ("textil",1500,3));
+// arrayProductos.push(new Producto ("pintura",1600,3));
+// arrayProductos.push(new Producto ("escultura",4000,3));
+// console.log (arrayProductos);
+
+const productosMap = [
+    {
+        nombre: "textil",
+        precio: "1500"
+    },
+    {
+        nombre: "pintura",
+        precio: "1600"
+    },
+    {
+        nombre: "escultura",
+        precio: "4000"
     }
+]
 
-        actualizarStock(x) {
-            this.stock = this.stock - x;
-    } 
-}
+const nombres = productosMap.map((el) => el.nombre)
 
-const arrayProductos = [];
-arrayProductos.push(new Producto ("textil",1500,3));
-arrayProductos.push(new Producto ("pintura",1600,3));
-arrayProductos.push(new Producto ("escultura",4000,3));
-console.log (arrayProductos);
+document.write(nombres)
+
+// alert (nombres)
+
+
 
 
 //Total de la compra
