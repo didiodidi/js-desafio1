@@ -1,21 +1,23 @@
-// class Producto{
-//     constructor(nombre,precio,stock){
-//         this.nombre = nombre;
-//         this.precio = parseInt(precio);
-//         this.stock = stock;
-//     }
+class Producto{
+    constructor(nombre,precio,stock){
+        this.nombre = nombre;
+        this.precio = parseInt(precio);
+        this.stock = stock;
+    }
 
-//         actualizarStock(x) {
-//             this.stock = this.stock - x;
-//     } 
-// }
+        actualizarStock(x) {
+            this.stock = this.stock - x;
+    } 
+}
 
-// const arrayProductos = [];
-// arrayProductos.push(new Producto ("textil",1500,3));
-// arrayProductos.push(new Producto ("pintura",1600,3));
-// arrayProductos.push(new Producto ("escultura",4000,3));
-// console.log (arrayProductos);
+const arrayProductos = [];
+arrayProductos.push(new Producto ("textil",1500,3));
+arrayProductos.push(new Producto ("pintura",1600,3));
+arrayProductos.push(new Producto ("escultura",4000,3));
+console.log (arrayProductos);
 
+
+//-------------> USO DE MAP
 const productosMap = [
     {
         nombre: "textil",
@@ -33,9 +35,7 @@ const productosMap = [
 
 const nombres = productosMap.map((el) => el.nombre)
 
-document.write(nombres)
-
-// alert (nombres)
+alert (nombres)
 
 
 
